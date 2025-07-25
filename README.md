@@ -5,9 +5,21 @@ Pull a decrypted IPA from a jailbroken device
 ## Usage
 
  1. Install [frida](http://www.frida.re/) on device
- 2. `sudo pip install -r requirements.txt --upgrade`
- 3. Run usbmuxd/iproxy SSH forwarding over USB (Default 2222 -> 22). e.g. `iproxy 2222 22`
- 4. Run ./dump.py `Display name` or `Bundle identifier`
+
+ 2. `sudo pip3 install -r requirements.txt --upgrade`
+
+ 3. config and build ts
+
+    ```stylus
+    npm install -g typescript
+    tsc
+    npm install
+    npm run build
+    ```
+
+ 4. Run usbmuxd/iproxy SSH forwarding over USB (Default 2222 -> 22). e.g. `iproxy 2222 22`
+
+ 5. Run ./dump.py `Display name` or `Bundle identifier`
 
 For SSH/SCP make sure you have your public key added to the target device's ~/.ssh/authorized_keys file.
 
@@ -54,5 +66,4 @@ If the following error occurs:
 * unexpected error while probing dyld of target process
 
 please open the application before dumping.
-
 
